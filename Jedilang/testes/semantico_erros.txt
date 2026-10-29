@@ -1,0 +1,53 @@
+/* Cada linha marcada tem um erro semantico proposital.
+   O analisador deve relatar TODOS, sem parar no primeiro e sem cascata. */
+FORCE_FLOW vidas = 3;
+FORCE_FLOW nome = "Luke";
+FORCE_FLOW vidas = 5;                     // ERRO: declaracao duplicada
+vidas = 2.5;                              // ERRO: BALANCE -> KYBER_CRYSTAL
+FORCE_FLOW x = nome * 2;                  // ERRO: '*' entre PROPHECY e KYBER_CRYSTAL
+FORCE_FLOW y = x + 1;                     // (sem erro extra: x ja tem tipo 'erro')
+TRANSMIT_HOLO(poder);                     // ERRO: variavel nao declarada
+TRANSMIT_HOLO(poder + 1);                 // (sem erro repetido para 'poder')
+FORCE_FLOW z = vidas / 0;                 // ERRO: divisao por zero
+
+TRUST_THE_FORCE (vidas) {                 // ERRO: condicao nao e LIGHT/DARK
+    TRANSMIT_HOLO(nome);
+}
+
+TRUST_THE_FORCE (vidas STRONGER_THAN "dez") { }   // ERRO: '>' com PROPHECY
+
+FORCE_FLOW ok = LIGHT ALLIANCE 3;         // ERRO: operando logico nao booleano
+
+COUNCIL_ORDER KYBER_CRYSTAL dobro(KYBER_CRYSTAL n, KYBER_CRYSTAL n) {   // ERRO: parametro duplicado
+    BECOME_ONE n * 2.0;                   // ERRO: retorno BALANCE em funcao KYBER_CRYSTAL
+}
+
+COUNCIL_ORDER PROPHECY titulo(LIGHT flag) {     // ERRO: LIGHT e valor, nao tipo
+    TRUST_THE_FORCE (flag EQUALS_THE_BALANCE LIGHT) {
+        BECOME_ONE "Mestre";
+        TRANSMIT_HOLO("nunca");           // AVISO: codigo inalcancavel
+    }
+}                                         // ERRO: nem todos os caminhos retornam
+
+dobro(1);                                 // ERRO: numero de argumentos
+dobro("um", 2);                           // ERRO: tipo do argumento 1
+voar(1);                                  // ERRO: funcao nao declarada
+voar(2);                                  // (sem erro repetido)
+vidas(1);                                 // ERRO: 'vidas' nao e funcao
+BECOME_ONE vidas;                         // ERRO: BECOME_ONE fora de funcao
+
+COUNCIL_ORDER anunciar(PROPHECY msg) {
+    TRANSMIT_HOLO(msg);
+}
+COUNCIL_ORDER DESTINY lado_luz(DESTINY d) {
+    BECOME_ONE d;
+}
+FORCE_FLOW nada = anunciar("oi");         // ERRO: funcao THE_VOID usada como valor
+TRANSMIT_HOLO(anunciar("oi"));            // ERRO: nada para transmitir
+lado_luz(1);                              // ERRO: KYBER_CRYSTAL em parametro DESTINY
+FORCE_FLOW soma = dobro(2, 3) + nome;     // ERRO: KYBER_CRYSTAL + PROPHECY
+
+COUNCIL_ORDER contagem(KYBER_CRYSTAL n) {
+    contagem(n - 1);                      // AVISO: retorno ainda nao inferido
+    BECOME_ONE n;
+}

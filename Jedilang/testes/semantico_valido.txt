@@ -1,0 +1,28 @@
+/* Programa semanticamente correto: deve compilar e executar */
+FORCE_FLOW base = 10;
+FORCE_FLOW taxa = 2.5;
+FORCE_FLOW total = base * taxa;      // int * float -> float (coercao implicita)
+FORCE_FLOW nome = "Yoda";
+TRANSMIT_HOLO(total);
+TRANSMIT_HOLO("Mestre " + nome);
+
+total = base;                        // int -> float na atribuicao: permitido
+
+COUNCIL_ORDER BALANCE media(BALANCE a, BALANCE b) {
+    BECOME_ONE (a + b) / 2;
+}
+
+COUNCIL_ORDER saudar(PROPHECY quem, KYBER_CRYSTAL vezes) {
+    TRAINING_ROUTINE (FORCE_FLOW i = 0; i WEAKER_THAN vezes; i = i + 1) {
+        TRANSMIT_HOLO("Que a Forca esteja com " + quem);
+    }
+}
+
+media(base, taxa);                   // argumento int -> parametro BALANCE: coercao
+saudar(nome, 2);
+
+TRUST_THE_FORCE (base STRONGER_THAN 5 ALLIANCE nome EQUALS_THE_BALANCE "Yoda") {
+    FORCE_FLOW base = 99;            // shadowing: permitido, gera aviso
+    TRANSMIT_HOLO(base);
+}
+

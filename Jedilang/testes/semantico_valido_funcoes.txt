@@ -1,0 +1,19 @@
+/* Semanticamente correto: DESTINY (bool) declaravel e chamadas de funcao dentro de expressoes.
+   Passa na analise semantica; a EXECUCAO destas construcoes ainda nao e suportada pelo interpretador. */
+FORCE_FLOW nome = "Yoda";
+COUNCIL_ORDER KYBER_CRYSTAL fatorial(KYBER_CRYSTAL n) {
+    TRUST_THE_FORCE (n WEAKER_THAN 2) {
+        BECOME_ONE 1;
+    }
+    BECOME_ONE n * fatorial(n - 1);       // recursao: retorno ja declarado
+}
+
+COUNCIL_ORDER DESTINY eh_jedi(PROPHECY quem, DESTINY lado) {
+    BECOME_ONE lado ALLIANCE quem DISCORD "Vader";
+}
+
+FORCE_FLOW f5 = fatorial(5) + 0.5;        // int + float -> float
+FORCE_FLOW mestre = eh_jedi(nome, LIGHT);
+TRUST_THE_FORCE (mestre ALLIANCE fatorial(3) STRONGER_THAN 2) {
+    TRANSMIT_HOLO(f5);
+}

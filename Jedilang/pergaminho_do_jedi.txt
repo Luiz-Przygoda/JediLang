@@ -1,0 +1,38 @@
+dicionario_jedilang_python = {
+    # --- Estruturas de Controle e Funções ---
+    "TRUST_THE_FORCE": "if",
+    "FEEL_THE_DARK_SIDE": "else",
+    "LIGHTSABER_DUEL": "while",
+    "TRAINING_ROUTINE": "for",        # Por dedução do contexto (rotina de treino)
+    "COUNCIL_ORDER": "def",           # Para declarar funções
+    "BECOME_ONE": "return",           # Retorno de função
+    "HOLOCRON": "class",              # Por dedução (armazenamento de conhecimento/objetos)
+    
+    # --- Entrada e Saída ---
+    "TRANSMIT_HOLO": "print",         # Saída de dados (escrever na tela)
+    "COMM_RECEIVE": "input",          # Entrada de dados (ler do teclado)
+    
+    # --- Declaração de Variáveis ---
+    "FORCE_FLOW": "",                 # Python não usa palavras (como var, let, const) para criar variáveis
+
+    # --- Operadores Relacionais (Comparações) ---
+    "STRONGER_THAN": ">",
+    "WEAKER_THAN": "<",
+    "EQUALS_THE_BALANCE": "==",
+    "DISCORD": "!=",                  # Falta de harmonia/diferente
+    
+    # --- Operadores Lógicos ---
+    "ALLIANCE": "and",                # Aliança/E
+    "DIVIDED": "or",                  # Dividido/Ou
+
+    # --- Valores Literais (Booleanos e Nulos) ---
+    "LIGHT": "True",
+    "DARK": "False",
+    "THE_VOID": "None",               # O vazio/Nulo
+
+    # --- Tipos de Dados (Opcional, pois Python é tipagem dinâmica) ---
+    "KYBER_CRYSTAL": "int",           # Por dedução (cristal base = inteiro)
+    "BALANCE": "float",               # Por dedução (ponto flutuante/equilíbrio)
+    "PROPHECY": "str",                # Por dedução (texto/profecia)
+    "DESTINY": "bool",                # Destino: LIGHT ou DARK (booleano)
+}

@@ -1,0 +1,16 @@
+/* The path of the Jedi */
+FORCE_FLOW aura = 2 + 2 * 4 + 3 * 5;
+FORCE_FLOW status = LIGHT; // Jedi mode
+TRANSMIT_HOLO(aura);
+
+COUNCIL_ORDER soma(KYBER_CRYSTAL aura, PROPHECY status) {
+
+    TRUST_THE_FORCE (aura STRONGER_THAN 10 DIVIDED status EQUALS_THE_BALANCE LIGHT) {
+        TRANSMIT_HOLO("Slaying everything!");
+        BECOME_ONE aura * 4 + FEEL_THE_DARK_SIDEcl;
+    } FEEL_THE_DARK_SIDE {
+        TRANSMIT_HOLO("Mogged by the Sith!");
+    }
+}
+
+soma(aura, status);
